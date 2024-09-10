@@ -1,0 +1,13 @@
+my_dbt_profile:
+  outputs:
+    dev:
+      type: snowflake
+      account: CDYDQDC-PA52849
+      user: tapgdw
+      password: T@pagri123
+      role: accountadmin
+      database: raw
+      warehouse: airbyte_wh
+      schema: bps
+      threads: 4
+  target: dev
