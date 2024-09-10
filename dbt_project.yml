@@ -1,53 +1,8 @@
-# Name of your DBT project
 name: 'my_dbt_project'
-
-# Version of your DBT project
 version: '1.0.0'
-
-# Path to the directory where DBT will store compiled SQL and other files
-# Default is 'target/'
-target-path: "target/"
-
-# Path to the directory where DBT will store run artifacts (run results, tests, etc.)
-# Default is 'target/'
-run-path: "target/"
-
-# Directory to look for models
-# 'models/' is the default location for model SQL files
-source-paths: ["models"]
-
-# The directory where DBT stores snapshots
-# Default is 'snapshots/'
-snapshot-paths: ["snapshots"]
-
-# Directory for DBT seeds (CSV files)
-data-paths: ["data"]
-
-# Directory for DBT analysis files (for one-off queries)
-analysis-paths: ["analysis"]
-
-# Directory for DBT macros
-macro-paths: ["macros"]
-
-# Directory for DBT docs
-docs-paths: ["docs"]
-
-# Profile is where DBT gets database connection details
-# The profile defined here should match the one in your profiles.yml file
 profile: 'my_dbt_profile'
 
-# Model configurations (you can override these at the model level as needed)
 models:
-  my_dbt_project:  # Project name to configure models within
-    materialized: view  # Default materialization type ('table', 'view', 'incremental', or 'ephemeral')
-
-# Use of quoting strategy, to handle case sensitivity
-quoting:
-  database: False
-  schema: False
-  identifier: False
-
-# Test configurations
-tests:
-  general:
-    severity: warn  # Configure severity of tests ('warn' or 'error')
+  my_dbt_project:
+    tr_rkt:
+      materialized: view  # This will create a view, you can also use 'table'
