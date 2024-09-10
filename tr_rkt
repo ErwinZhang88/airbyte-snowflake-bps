@@ -1,1 +1,0 @@
-SELECT TRY_TO_DATE(substring(column_name,1,10), 'YYYY-MM-DD') AS period_budget FROM {{ source('bps', 'tr_rkt') }};
