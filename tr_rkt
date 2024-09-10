@@ -1,12 +1,1 @@
-alter table raw.dwh.tr_rkt
-add (period_budget_new date);
-
-update raw.dwh.tr_rkt
-set period_budget_new = substring(period_budget,1,10)::date
-where period_budget_new is null;
-
-alter table raw.dwh.tr_rkt
-drop column period_budget;
-
-alter table raw.dwh.tr_rkt
-rename column period_budget_new to period_budget;
+SELECT TRY_TO_DATE(substring(column_name,1,10), 'YYYY-MM-DD') AS period_budget FROM {{ source('bps', 'tr_rkt') }};
